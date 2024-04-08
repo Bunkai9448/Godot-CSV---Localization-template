@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://locale.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Essays1743-BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/RiiT_F.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Dialogue/DialogueBox.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+fallback/0 = ExtResource( 2 )
+fallback/1 = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+fallback/0 = ExtResource( 2 )
+fallback/1 = ExtResource( 3 )
+
+[node name="Locale" type="CenterContainer"]
+script = ExtResource( 1 )
+
+[node name="DialogueBox" parent="." instance=ExtResource( 4 )]
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 214.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 77, 150 )
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 3.0
+margin_right = 80.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "LanguageID"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_left = 84.0
+margin_right = 214.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 1 )
+text = "ChangeLangButton"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

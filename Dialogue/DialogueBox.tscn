@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Dialogue/DialogueBox.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonts/Essays1743-BoldItalic.ttf"
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Fonts/RiiT_F.otf"
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Fonts/Essays1743-BoldItalic.ttf"
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = SubResource( 2 )
+fallback/0 = SubResource( 3 )
+fallback/1 = SubResource( 4 )
+
+[node name="DialogueBox" type="Node"]
+pause_mode = 1
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Tween" type="Tween" parent="CanvasLayer"]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 3.0
+margin_top = 122.0
+margin_right = 792.0
+margin_bottom = 339.0
+rect_scale = Vector2( 0.397668, 0.255535 )
+rect_pivot_offset = Vector2( -3.55558e-15, 7.62939e-06 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+margin_left = 14.9177
+margin_top = 39.5533
+margin_right = 58.9177
+margin_bottom = 96.5533
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "CSV - Localization template for Godot 3.X"
